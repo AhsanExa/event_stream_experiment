@@ -40,7 +40,9 @@ mixin _$EventStreamData {
             String newVersion)
         bannerUpdatedDetails,
     required TResult Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)
         assistedSavingsData,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +55,9 @@ mixin _$EventStreamData {
             String newVersion)?
         bannerUpdatedDetails,
     TResult? Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)?
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
   }) =>
       throw _privateConstructorUsedError;
@@ -65,7 +69,10 @@ mixin _$EventStreamData {
     TResult Function(String bannerCollectionId, String previousVersion,
             String newVersion)?
         bannerUpdatedDetails,
-    TResult Function(@TestConverter() Map<String, dynamic> assistedSavingsData)?
+    TResult Function(
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
     required TResult orElse(),
   }) =>
@@ -229,7 +236,9 @@ class _$M2AEventStreamDataImpl implements M2AEventStreamData {
             String newVersion)
         bannerUpdatedDetails,
     required TResult Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)
         assistedSavingsData,
   }) {
     return m2aDetails(cpsTransactionId, amount, fee, receiverIdentifier);
@@ -245,7 +254,9 @@ class _$M2AEventStreamDataImpl implements M2AEventStreamData {
             String newVersion)?
         bannerUpdatedDetails,
     TResult? Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)?
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
   }) {
     return m2aDetails?.call(cpsTransactionId, amount, fee, receiverIdentifier);
@@ -260,7 +271,10 @@ class _$M2AEventStreamDataImpl implements M2AEventStreamData {
     TResult Function(String bannerCollectionId, String previousVersion,
             String newVersion)?
         bannerUpdatedDetails,
-    TResult Function(@TestConverter() Map<String, dynamic> assistedSavingsData)?
+    TResult Function(
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
     required TResult orElse(),
   }) {
@@ -442,7 +456,9 @@ class _$BannerUpdatedDetailsEventStreamDataImpl
             String newVersion)
         bannerUpdatedDetails,
     required TResult Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)
         assistedSavingsData,
   }) {
     return bannerUpdatedDetails(
@@ -459,7 +475,9 @@ class _$BannerUpdatedDetailsEventStreamDataImpl
             String newVersion)?
         bannerUpdatedDetails,
     TResult? Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)?
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
   }) {
     return bannerUpdatedDetails?.call(
@@ -475,7 +493,10 @@ class _$BannerUpdatedDetailsEventStreamDataImpl
     TResult Function(String bannerCollectionId, String previousVersion,
             String newVersion)?
         bannerUpdatedDetails,
-    TResult Function(@TestConverter() Map<String, dynamic> assistedSavingsData)?
+    TResult Function(
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
     required TResult orElse(),
   }) {
@@ -560,7 +581,10 @@ abstract class _$$AssistedSavingsEventStreamDataImplCopyWith<$Res> {
           $Res Function(_$AssistedSavingsEventStreamDataImpl) then) =
       __$$AssistedSavingsEventStreamDataImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({@TestConverter() Map<String, dynamic> assistedSavingsData});
+  $Res call(
+      {@JsonKey(includeIfNull: false)
+      @unpackConverter
+      Map<String, dynamic>? assistedSavingsData});
 }
 
 /// @nodoc
@@ -576,13 +600,13 @@ class __$$AssistedSavingsEventStreamDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assistedSavingsData = null,
+    Object? assistedSavingsData = freezed,
   }) {
     return _then(_$AssistedSavingsEventStreamDataImpl(
-      assistedSavingsData: null == assistedSavingsData
+      assistedSavingsData: freezed == assistedSavingsData
           ? _value._assistedSavingsData
           : assistedSavingsData // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -592,7 +616,9 @@ class __$$AssistedSavingsEventStreamDataImplCopyWithImpl<$Res>
 class _$AssistedSavingsEventStreamDataImpl
     implements AssistedSavingsEventStreamData {
   const _$AssistedSavingsEventStreamDataImpl(
-      {@TestConverter() required final Map<String, dynamic> assistedSavingsData,
+      {@JsonKey(includeIfNull: false)
+      @unpackConverter
+      required final Map<String, dynamic>? assistedSavingsData,
       final String? $type})
       : _assistedSavingsData = assistedSavingsData,
         $type = $type ?? 'assistedSavingsData';
@@ -601,14 +627,17 @@ class _$AssistedSavingsEventStreamDataImpl
           Map<String, dynamic> json) =>
       _$$AssistedSavingsEventStreamDataImplFromJson(json);
 
-  final Map<String, dynamic> _assistedSavingsData;
+  final Map<String, dynamic>? _assistedSavingsData;
   @override
-  @TestConverter()
-  Map<String, dynamic> get assistedSavingsData {
+  @JsonKey(includeIfNull: false)
+  @unpackConverter
+  Map<String, dynamic>? get assistedSavingsData {
+    final value = _assistedSavingsData;
+    if (value == null) return null;
     if (_assistedSavingsData is EqualUnmodifiableMapView)
       return _assistedSavingsData;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_assistedSavingsData);
+    return EqualUnmodifiableMapView(value);
   }
 
   @JsonKey(name: 'runtimeType')
@@ -646,7 +675,9 @@ class _$AssistedSavingsEventStreamDataImpl
             String newVersion)
         bannerUpdatedDetails,
     required TResult Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)
         assistedSavingsData,
   }) {
     return assistedSavingsData(this.assistedSavingsData);
@@ -662,7 +693,9 @@ class _$AssistedSavingsEventStreamDataImpl
             String newVersion)?
         bannerUpdatedDetails,
     TResult? Function(
-            @TestConverter() Map<String, dynamic> assistedSavingsData)?
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
   }) {
     return assistedSavingsData?.call(this.assistedSavingsData);
@@ -677,7 +710,10 @@ class _$AssistedSavingsEventStreamDataImpl
     TResult Function(String bannerCollectionId, String previousVersion,
             String newVersion)?
         bannerUpdatedDetails,
-    TResult Function(@TestConverter() Map<String, dynamic> assistedSavingsData)?
+    TResult Function(
+            @JsonKey(includeIfNull: false)
+            @unpackConverter
+            Map<String, dynamic>? assistedSavingsData)?
         assistedSavingsData,
     required TResult orElse(),
   }) {
@@ -736,15 +772,17 @@ class _$AssistedSavingsEventStreamDataImpl
 
 abstract class AssistedSavingsEventStreamData implements EventStreamData {
   const factory AssistedSavingsEventStreamData(
-          {@TestConverter()
-          required final Map<String, dynamic> assistedSavingsData}) =
+          {@JsonKey(includeIfNull: false)
+          @unpackConverter
+          required final Map<String, dynamic>? assistedSavingsData}) =
       _$AssistedSavingsEventStreamDataImpl;
 
   factory AssistedSavingsEventStreamData.fromJson(Map<String, dynamic> json) =
       _$AssistedSavingsEventStreamDataImpl.fromJson;
 
-  @TestConverter()
-  Map<String, dynamic> get assistedSavingsData;
+  @JsonKey(includeIfNull: false)
+  @unpackConverter
+  Map<String, dynamic>? get assistedSavingsData;
   @JsonKey(ignore: true)
   _$$AssistedSavingsEventStreamDataImplCopyWith<
           _$AssistedSavingsEventStreamDataImpl>

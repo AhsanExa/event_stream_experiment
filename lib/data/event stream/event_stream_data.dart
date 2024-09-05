@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:extra_json_annotation/extra_json_annotation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../utility/typedef.dart';
@@ -30,7 +31,8 @@ class EventStreamData extends JsonDecodable with _$EventStreamData {
   }) = BannerUpdatedDetailsEventStreamData;
 
   const factory EventStreamData.assistedSavingsData({
-    @TestConverter() required JsonMap assistedSavingsData,
+    @JsonKey(includeIfNull: false)
+     @unpackConverter required JsonMap? assistedSavingsData,
   }) = AssistedSavingsEventStreamData;
 
   factory EventStreamData.fromJson(Map<String, dynamic> json) =>

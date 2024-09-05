@@ -38,6 +38,8 @@ dependencies:
 
   freezed_annotation: ^2.4.1
   json_annotation: ^4.6.0
+  extra_json_annotation:
+    path: plugins/extra_json_annotation
 
 dev_dependencies:
   flutter_test:

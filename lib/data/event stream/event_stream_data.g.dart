@@ -48,14 +48,22 @@ Map<String, dynamic> _$$BannerUpdatedDetailsEventStreamDataImplToJson(
 _$AssistedSavingsEventStreamDataImpl
     _$$AssistedSavingsEventStreamDataImplFromJson(Map<String, dynamic> json) =>
         _$AssistedSavingsEventStreamDataImpl(
-          assistedSavingsData: const TestConverter()
-              .fromJson(json['assistedSavingsData'] as Map<String, dynamic>),
+          assistedSavingsData:
+              json['assistedSavingsData'] as Map<String, dynamic>?,
           $type: json['runtimeType'] as String?,
         );
 
 Map<String, dynamic> _$$AssistedSavingsEventStreamDataImplToJson(
-        _$AssistedSavingsEventStreamDataImpl instance) =>
-    <String, dynamic>{
-      ...const TestConverter().toJson(instance.assistedSavingsData),
-      'runtimeType': instance.$type,
-    };
+    _$AssistedSavingsEventStreamDataImpl instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val.addAll(value);
+    }
+  }
+
+  writeNotNull('assistedSavingsData', instance.assistedSavingsData);
+  val['runtimeType'] = instance.$type;
+  return val;
+}

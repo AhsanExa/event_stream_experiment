@@ -5,11 +5,9 @@
     "appUserInfo": "AppUserInfo",
     "durationInMillis": 0,
     "assistedSavingsData": {
-      "assistedSavingsData": {
-        "field 1": "value 1",
-        "field 2": "value 2",
-        "field 3": "value 3"
-      }
+      "field 1": "value 1",
+      "field 2": "value 2",
+      "field 3": "value 3"
     }
   }
 }
