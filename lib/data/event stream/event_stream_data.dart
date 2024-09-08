@@ -31,8 +31,7 @@ class EventStreamData extends JsonDecodable with _$EventStreamData {
   }) = BannerUpdatedDetailsEventStreamData;
 
   const factory EventStreamData.assistedSavingsData({
-    @JsonKey(includeIfNull: false)
-     @unpackConverter required JsonMap? assistedSavingsData,
+    @unpackConverter required JsonMap assistedSavingsData,
   }) = AssistedSavingsEventStreamData;
 
   factory EventStreamData.fromJson(Map<String, dynamic> json) =>
